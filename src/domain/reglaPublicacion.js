@@ -17,7 +17,7 @@
  *    el repositorio institucional SÍ es subsanable (estado OBSERVADO).
  */
 export const REGLA_PUBLICACION = Object.freeze({
-  basesAdmitidas: Object.freeze(['SciELO', 'Scopus', 'Web of Science']),
+  basesAdmitidas: Object.freeze(['Scopus', 'Web of Science']),
   filiacionRequerida: 'UNMSM',
   rolesAdmitidos: Object.freeze(['principal', 'asociado']),
   aniosVentana: 3,
