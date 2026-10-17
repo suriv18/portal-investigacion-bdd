@@ -1,0 +1,35 @@
+# Pipeline de Integración Continua: la especificación (.feature) se ejecuta
+# en cada push y pull request. Si un cambio en la lógica de negocio rompe
+# un escenario, el pipeline falla y el cambio no se integra.
+name: Especificaciones ejecutables (BDD)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  bdd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Ejecutar escenarios Cucumber
+        run: npm test
+
+      - name: Publicar documentación viva (reporte HTML)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentacion-viva-cucumber
+          path: reports/

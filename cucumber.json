@@ -1,0 +1,13 @@
+{
+  "default": {
+    "paths": ["features/**/*.feature"],
+    "import": ["features/support/**/*.js", "features/step_definitions/**/*.js"],
+    "format": [
+      "pretty",
+      "html:reports/cucumber-report.html",
+      "junit:reports/cucumber-junit.xml",
+      "message:reports/cucumber-messages.ndjson"
+    ],
+    "strict": true
+  }
+}

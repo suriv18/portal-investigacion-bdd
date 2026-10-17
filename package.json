@@ -1,0 +1,20 @@
+{
+  "name": "portal-investigacion-bdd",
+  "version": "1.0.0",
+  "description": "HU-01: pre-verificación de requisitos del Portal de Investigación UNMSM - especificación ejecutable con Cucumber",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:critica": "cucumber-js --tags @critica",
+    "test:limites": "cucumber-js --tags @limites",
+    "docs": "cucumber-js --dry-run --format usage"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.3.0"
+  },
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": "22 || 24 || >=26"
+  }
+}
